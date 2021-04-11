@@ -25,6 +25,7 @@ public class LoginPageSteps extends BaseClass {
 
 	@Given("User is on the AdactinHotelApp login page")
 	public void user_is_on_the_AdactinHotelApp_login_page() {
+		System.out.println("prakash writ");
 		getDriver();
 		launchUrl("http://adactinhotelapp.com/");
 	}
