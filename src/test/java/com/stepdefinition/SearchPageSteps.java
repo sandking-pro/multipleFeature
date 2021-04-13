@@ -2,72 +2,72 @@ package com.stepdefinition;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import org.adactin.BaseClass;
 import org.junit.Assert;
-import org.login.elements.BookHotel;
-import org.login.elements.SearchHotelElements;
-import org.login.elements.SelectHotel;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.login.elements.BookHotelPage;
+import org.login.elements.SearchHotelPage;
+import org.login.elements.SelectHotelPage;
 import cucumber.api.java.en.Then;
-import net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.DiscoveryStrategy.Explicit;
 
 public class SearchPageSteps extends BaseClass {
 
-	SearchHotelElements sh;
-	SelectHotel slh;
-	BookHotel bh;
+	SearchHotelPage sh;
+	SelectHotelPage slh;
+	BookHotelPage bh;
 
-	private static int n = 0;
-
-	@Then("User should search hotels with all valid details")
-	public void user_should_search_hotels_with_all_valid_details(io.cucumber.datatable.DataTable dataTable) {
-		sh = new SearchHotelElements();
-		Assert.assertTrue("verify", sh.getLoginVerify().getAttribute("value").contains("prakash"));
-		List<Map<String, String>> asMaps = dataTable.asMaps();
-		Map<String, String> map = asMaps.get(n);
-		sh.searchHotel(map.get("location"), map.get("hotels"), map.get("roomType"), map.get("numberOfRooms"),
-				map.get("checkIn"), map.get("checkOut"), map.get("apr"), map.get("cpr"));
+	// Feature-1 :Scenario-1
+	@Then("User should verify login {string} and search hotels with valid details {string}, {string}, {string}, {string},{string}, {string}, {string} and {string}")
+	public void userShouldVerifyLoginAndSearchHotelsWithValidDetailsAnd(String userName,String location, String hotels, String roomType,
+			String numberOfRooms, String checkIn, String checkOut, String adultPerRoom, String childPerRoom) {
+		sh = new SearchHotelPage();
+		sh.verifyLoginAssert(userName);
+		sh.searchHotel(location, hotels, roomType, numberOfRooms, checkIn, checkOut, adultPerRoom, childPerRoom);
 	}
-	
+
+	// Feature-1 :Scenario-2
+	@Then("User should verify login {string} and search hotels with mandatory details {string}, {string},{string}, {string} and {string}")
+	public void userShouldVerifyLoginAndSearchHotelsWithMandatoryDetailsAnd(String userName,String location, String numberOfRooms,
+			String checkIn, String checkOut, String adultPerRoom) {
+		sh = new SearchHotelPage();
+		sh.verifyLoginAssert(userName);
+		sh.searchHotel(location, numberOfRooms, checkIn, checkOut, adultPerRoom);
+	}
+
+	// Feature-1 :Scenario-3
+	@Then("User should verify login {string} and search hotels using invalid checkin and checkout date {string}, {string},{string}, {string} and {string}")
+	public void userShouldVerifyLoginAndSearchHotelsUsingInvalidCheckinAndCheckoutDateAnd(String userName,String location,
+			String numberOfRooms, String checkIn, String checkOut, String adultPerRoom) {
+		sh = new SearchHotelPage();
+		sh.verifyLoginAssert(userName);
+		sh.searchHotel(location, numberOfRooms, checkIn, checkOut, adultPerRoom);
+	}
+
+	// Feature-1 :Scenario-3
+	@Then("User should verify {string} and {string} is displayed")
+	public void userShouldVerifyAndIsDisplayed(String msg1, String msg2) {
+		timeOut(5);
+		sh.verifyCheckInOutAssert(msg1,msg2);
+	}
+
+	// Feature-1 :Scenario-4
+	@Then("User should verify login {string} and search hotels without selecting location")
+	public void userShouldVerifyLoginAndSearchHotelsWithoutSelectingLocation(String userName) {
+		sh = new SearchHotelPage();
+		sh.searchHotel();
+	}
+
+	// Feature-1 :Scenario-4
+	@Then("User should verify error {string} is displayed")
+	public void userShouldVerifyErrorIsDisplayed(String errMsg) {
+		sh.verifyLocationAssert(errMsg);
+	}
+
+	// Feature-1,2 :Scenario-1,2
 	@Then("User should verify {string} is displayed")
 	public void user_should_verify_is_displayed(String msg) {
-		slh = new SelectHotel();
-		slh.verifyAssert(msg);
-		
-	}
-
-	@Then("User should select hotel and click the continue button")
-	public void user_should_select_hotel_and_click_the_continue_button() {
-		
-		slh.SelectHotel();
-	}
-
-	@Then("User should book hotel using valid user details")
-	public void user_should_book_hotel_using_valid_user_details(io.cucumber.datatable.DataTable dataTable) {
-		List<Map<String, String>> asMaps1 = dataTable.asMaps();
-		Map<String, String> map = asMaps1.get(n);
-
-		bh = new BookHotel();
-		bh.bookHotel(map.get("firstName"), map.get("lastName"), map.get("address"), map.get("crediCardNo"),
-				map.get("creditCardType"), map.get("expiryMonth"), map.get("expiryYear"), map.get("cvv"));
-
-	}
-
-	@Then("User should book the hotel and verify order details")
-	public void user_should_book_the_hotel_and_verify_order_details() {
-		btnClick(bh.getBook_now());
-	//	driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
-		System.out.println("Order Id" + getAttributeText(bh.getOrderno()));
-	}
-
-	@Then("User should logout and exit")
-	public void user_should_logout_and_exit() {
-		n++;
-		driver.close();
+		slh = new SelectHotelPage();
+		slh.verifySearchAssert(msg);
 	}
 
 }
