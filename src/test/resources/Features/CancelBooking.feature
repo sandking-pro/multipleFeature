@@ -13,7 +13,7 @@ Feature: Verify AdactinHotelApp Cancel booking functionality
       | 888777921123456789 | Master Card      | June        |       2021 | 888 |
     Then User should verify order id and click Booked Itinerary
     Then User should search order id clicks cancel order and click ok
-    Then User should verify "The booking has been cancelled" is displayed
+    Then User should verify order "The booking has been cancelled" is displayed
 
     Examples: 
       | userName | passWord | location | hotels      | roomType | numberOfRooms | checkIn    | checkOut   | adultPerRoom | childPerRoom | firstName | lastName | address        |

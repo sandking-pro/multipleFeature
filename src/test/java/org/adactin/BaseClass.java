@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,6 +44,11 @@ public class BaseClass {
 		element.clear();
 		element.sendKeys(value);
 	}
+	
+	public void enterTextSubmit(WebElement element, String value) {
+		element.clear();
+		element.sendKeys(value,Keys.ENTER);
+	}
 
 	public void btnClick(WebElement element) {
 		element.click();
@@ -73,6 +80,10 @@ public class BaseClass {
 		return element.getAttribute("value");
 	}
 	
+	public String getElementText(WebElement element) {
+		return element.getText();
+	}
+	
 	public void verifyAssert(String expected,String actual) {
 		Assert.assertEquals(expected, actual);
 	}
@@ -85,6 +96,11 @@ public class BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		WebElement until = wait.until(ExpectedConditions.visibilityOf(element));
 		return element;
+	}
+	
+	public Alert switchToAlert() {
+		Alert alert = driver.switchTo().alert();
+		return alert;
 	}
 
 }

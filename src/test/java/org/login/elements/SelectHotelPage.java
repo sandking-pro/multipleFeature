@@ -33,7 +33,7 @@ public class SelectHotelPage extends BaseClass {
 		return selectHotel;
 	}
 
-	public void SelectHotel() {
+	public void selectHotel() {
 		btnClick(getSelectHotel());
 		btnClick(getContinueBtn());
 	}

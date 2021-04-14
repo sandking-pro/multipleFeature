@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.stepdefinition.BookingPageSteps;
 import com.stepdefinition.SelectPageSteps;
 
 public class BookHotelPage extends BaseClass {
@@ -15,8 +16,6 @@ public class BookHotelPage extends BaseClass {
 
 	@FindBy(id = "first_name")
 	private WebElement fname;
-
-	
 
 	@FindBy(id = "last_name")
 	private WebElement lname;
@@ -65,7 +64,10 @@ public class BookHotelPage extends BaseClass {
 
 	@FindBy(id = "cc_cvv_span")
 	private WebElement spanCcv;
-	
+
+	@FindBy(id = "my_itinerary")
+	private WebElement btnItenary;
+
 	public WebElement getFname() {
 		return fname;
 	}
@@ -118,11 +120,15 @@ public class BookHotelPage extends BaseClass {
 		return spanAddress;
 	}
 
+	public WebElement getBtnItenary() {
+		return btnItenary;
+	}
+
 	public void verifyOrderAssert() {
 		WebElement orderBtn = webDriverWait(getOrderno(), 10);
 		String orderText = getAttributeText(orderBtn);
 		verifyBoolAssert("Verify OrderId", (!orderText.isEmpty()));
-		SelectPageSteps.currentOrderId = orderText;
+		BookingPageSteps.currentOrderId = orderText;
 	}
 
 	public void verifyErrorAssert(String fnameErr, String lnameErr, String addressErr) {
@@ -145,8 +151,11 @@ public class BookHotelPage extends BaseClass {
 	}
 
 	public void bookHotel() {
-		System.out.println(getBook_now().getText());
 		btnClick(getBook_now());
+	}
+
+	public void navigateToCancellation() {
+		btnClick(getBtnItenary());
 	}
 
 }

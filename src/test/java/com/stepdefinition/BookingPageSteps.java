@@ -10,6 +10,8 @@ import cucumber.api.java.en.Then;
 public class BookingPageSteps {
 
 	BookHotelPage bh;
+
+	public static String currentOrderId;
 	
 	public BookingPageSteps() {
 		bh = new BookHotelPage();
@@ -21,7 +23,6 @@ public class BookingPageSteps {
 		List<Map<String, String>> bookingDetails = dataTable.asMaps();
 		Map<String, String> map = bookingDetails.get(0);
 
-//		bh = new BookHotelPage();
 		bh.bookHotel(fname, lname, address, map.get("creditCardNo"), map.get("creditCardType"), map.get("expiryMonth"),
 				map.get("expiryYear"), map.get("cvv"));
 	}
@@ -33,7 +34,6 @@ public class BookingPageSteps {
 
 	@Then("User should click book now without passing any details")
 	public void userShouldClickBookNowWithoutPassingAnyDetails() {
-//		bh = new BookHotelPage();
 		bh.bookHotel();
 	}
 
@@ -41,5 +41,11 @@ public class BookingPageSteps {
 	public void userShouldVerifyAndIsDisplayed(String fnameErr, String lnameErr, String addressErr) {
 		bh.bookHotel();
 		bh.verifyErrorAssert(fnameErr, lnameErr, addressErr);
+	}
+	
+	@Then("User should verify order id and click Booked Itinerary")
+	public void userShouldVerifyOrderIdAndClickBookedItinerary() {		
+		bh.verifyOrderAssert();
+		bh.navigateToCancellation();
 	}
 }

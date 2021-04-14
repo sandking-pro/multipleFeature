@@ -13,11 +13,9 @@ import cucumber.api.java.en.Then;
 public class SearchPageSteps extends BaseClass {
 
 	SearchHotelPage sh;
-	SelectHotelPage slh;
 	
 	public SearchPageSteps() {
 		sh = new SearchHotelPage();
-		slh = new SelectHotelPage();
 	}
 
 	// Feature-1 :Scenario-1
@@ -64,10 +62,5 @@ public class SearchPageSteps extends BaseClass {
 		sh.verifyLocationAssert(errMsg);
 	}
 
-	// Feature-1,2 :Scenario-1,2
-	@Then("User should verify {string} is displayed")
-	public void user_should_verify_is_displayed(String msg) {
-		slh.verifySearchAssert(msg);
-	}
 
 }

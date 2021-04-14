@@ -1,26 +1,26 @@
 package com.stepdefinition;
 
 import org.login.elements.BookHotelPage;
+import org.login.elements.CancelBookingPage;
 
 import cucumber.api.java.en.Then;
 
 public class CancelPageSteps {
 
-	BookHotelPage bh;
+	CancelBookingPage cb;
 	
 	public CancelPageSteps() {
-		bh=new BookHotelPage();
+		cb=new CancelBookingPage();
 	}
 	
-	@Then("User should verify order id and click Booked Itinerary")
-	public void userShouldVerifyOrderIdAndClickBookedItinerary() {		
-		bh.verifyOrderAssert();
-		
-	}
-
 	@Then("User should search order id clicks cancel order and click ok")
 	public void userShouldSearchOrderIdClicksCancelOrderAndClickOk() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    cb.cancelBooking();
+	    
+	}
+	
+	@Then("User should verify order {string} is displayed")
+	public void userShouldVerifyOrderIsDisplayed(String bookingMsg) {
+		cb.verifyCancellationAssert(bookingMsg);
 	}
 }
