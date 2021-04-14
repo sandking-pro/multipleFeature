@@ -22,7 +22,7 @@ public class CancelBookingPage extends BaseClass{
 	@FindBy(id="order_id_text")
 	private WebElement txtboxSearchOrder;
 	
-	@FindBy(xpath="//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr[1]//td[3]")
+	@FindBy(xpath="//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr[1]//td[3]//input")
 	private List<WebElement> tdSearchOrder;
 	
 	@FindBy(id="search_result_error")
@@ -43,20 +43,18 @@ public class CancelBookingPage extends BaseClass{
 	public void cancelBooking(){
 		enterTextSubmit(txtboxSearchOrder, BookingPageSteps.currentOrderId);
 		List<WebElement> listOrderId = getTdSearchOrder();
-		System.out.println(getAttributeText(listOrderId.get(0)));
-		//&& getAttributeText(listOrderId.get(0)).contains(BookingPageSteps.currentOrderId)
-		if(listOrderId.size() == 1 ) {
+		if(listOrderId.size() == 1 && getAttributeText(listOrderId.get(0)).contains(BookingPageSteps.currentOrderId) ) {
 			listOrderId.get(0).click();
 			switchToAlert().accept();
+		}else {
+			verifyBoolAssert("Booking Id not found", false);
 		}
 	}
 	
 	public void verifyCancellationAssert(String expecctedMsg) {
 		WebElement webDriverWait = webDriverWait(getLabelErrorMsg(),10);
-		System.out.println(webDriverWait.getText());
-		String verifyCancelTxt = getElementText(webDriverWait(getLabelErrorMsg(),10));
-		System.out.println(verifyCancelTxt);
-		System.out.println(expecctedMsg);
+		String actualTxt = getElementText(webDriverWait(getLabelErrorMsg(),10));
+		verifyAssert(expecctedMsg, actualTxt);
 	}
 
 }
