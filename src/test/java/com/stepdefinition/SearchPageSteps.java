@@ -14,13 +14,17 @@ public class SearchPageSteps extends BaseClass {
 
 	SearchHotelPage sh;
 	SelectHotelPage slh;
-	BookHotelPage bh;
+	
+	public SearchPageSteps() {
+		sh = new SearchHotelPage();
+		slh = new SelectHotelPage();
+	}
 
 	// Feature-1 :Scenario-1
 	@Then("User should verify login {string} and search hotels with valid details {string}, {string}, {string}, {string},{string}, {string}, {string} and {string}")
 	public void userShouldVerifyLoginAndSearchHotelsWithValidDetailsAnd(String userName,String location, String hotels, String roomType,
 			String numberOfRooms, String checkIn, String checkOut, String adultPerRoom, String childPerRoom) {
-		sh = new SearchHotelPage();
+		
 		sh.verifyLoginAssert(userName);
 		sh.searchHotel(location, hotels, roomType, numberOfRooms, checkIn, checkOut, adultPerRoom, childPerRoom);
 	}
@@ -29,7 +33,6 @@ public class SearchPageSteps extends BaseClass {
 	@Then("User should verify login {string} and search hotels with mandatory details {string}, {string},{string}, {string} and {string}")
 	public void userShouldVerifyLoginAndSearchHotelsWithMandatoryDetailsAnd(String userName,String location, String numberOfRooms,
 			String checkIn, String checkOut, String adultPerRoom) {
-		sh = new SearchHotelPage();
 		sh.verifyLoginAssert(userName);
 		sh.searchHotel(location, numberOfRooms, checkIn, checkOut, adultPerRoom);
 	}
@@ -38,7 +41,6 @@ public class SearchPageSteps extends BaseClass {
 	@Then("User should verify login {string} and search hotels using invalid checkin and checkout date {string}, {string},{string}, {string} and {string}")
 	public void userShouldVerifyLoginAndSearchHotelsUsingInvalidCheckinAndCheckoutDateAnd(String userName,String location,
 			String numberOfRooms, String checkIn, String checkOut, String adultPerRoom) {
-		sh = new SearchHotelPage();
 		sh.verifyLoginAssert(userName);
 		sh.searchHotel(location, numberOfRooms, checkIn, checkOut, adultPerRoom);
 	}
@@ -53,7 +55,6 @@ public class SearchPageSteps extends BaseClass {
 	// Feature-1 :Scenario-4
 	@Then("User should verify login {string} and search hotels without selecting location")
 	public void userShouldVerifyLoginAndSearchHotelsWithoutSelectingLocation(String userName) {
-		sh = new SearchHotelPage();
 		sh.searchHotel();
 	}
 
@@ -66,7 +67,6 @@ public class SearchPageSteps extends BaseClass {
 	// Feature-1,2 :Scenario-1,2
 	@Then("User should verify {string} is displayed")
 	public void user_should_verify_is_displayed(String msg) {
-		slh = new SelectHotelPage();
 		slh.verifySearchAssert(msg);
 	}
 

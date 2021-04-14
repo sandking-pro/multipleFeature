@@ -142,19 +142,6 @@ public class SearchHotelPage extends BaseClass {
 		return submitSearch;
 	}
 
-	public void verifyLoginAssert(String name) {
-		verifyBoolAssert("Verify Login", getLoginVerify().getAttribute("value").contains(name));
-	}
-
-	public void verifyCheckInOutAssert(String indate, String outdate) {
-		verifyBoolAssert("Verify Checkin", getSpanCheckin().getText().contains(indate));
-		verifyBoolAssert("Verify Checkout", getSpanCheckout().getText().contains(outdate));
-	}
-
-	public void verifyLocationAssert(String locationMsg) {
-		verifyBoolAssert("Verify Location", getSpanLocation().getText().contains(locationMsg));
-	}
-
 	public void searchHotel(String location, String hotels, String rt, String nor, String cin, String cout, String apr,
 			String cpr) {
 		selectDropdown(getLocation(), location, "vt");
@@ -179,6 +166,19 @@ public class SearchHotelPage extends BaseClass {
 
 	public void searchHotel() {
 		btnClick(getSubmitSearch());
+	}
+	
+	public void verifyLoginAssert(String name) {
+		verifyBoolAssert("Verify Login", getLoginVerify().getAttribute("value").contains(name));
+	}
+
+	public void verifyCheckInOutAssert(String indate, String outdate) {
+		verifyBoolAssert("Verify Checkin", getSpanCheckin().getText().contains(indate));
+		verifyBoolAssert("Verify Checkout", getSpanCheckout().getText().contains(outdate));
+	}
+
+	public void verifyLocationAssert(String locationMsg) {
+		verifyBoolAssert("Verify Location", getSpanLocation().getText().contains(locationMsg));
 	}
 
 }

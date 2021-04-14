@@ -18,8 +18,8 @@ public class LoginPageSteps extends BaseClass {
 	}
 	
 	@When("User should enter valid {string} , {string} and click the login button")
-	public void userShouldEnterValidAndClickTheLoginButton(String un, String pswd) {
-	    lp = new LoginPage();
+	public void userShouldEnterValidAndClickTheLoginButton(String un, String pswd) { 
+		lp = new LoginPage();
 		lp.login(un, pswd);
 	}
 

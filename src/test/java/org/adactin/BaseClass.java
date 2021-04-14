@@ -11,7 +11,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -77,6 +79,12 @@ public class BaseClass {
 	
 	public void verifyBoolAssert(String message,Boolean bool) {
 		Assert.assertTrue(message,bool);
+	}
+	
+	public WebElement webDriverWait(WebElement element,int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement until = wait.until(ExpectedConditions.visibilityOf(element));
+		return element;
 	}
 
 }

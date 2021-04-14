@@ -15,17 +15,17 @@ Feature: Verify AdactinHotelApp Book Hotel Functionality
 
     Examples: 
       | userName | passWord | location | hotels      | roomType | numberOfRooms | checkIn    | checkOut   | adultPerRoom | childPerRoom | firstName | lastName | address        |
-      | prakash0 | J5M3AD   | Sydney   | Hotel Creek | Double   |             2 | 13/04/2021 | 14/04/2021 |            2 |            2 | sand      | kumar    | 18 kodambakkam |
+      | prakash0 | J5M3AD   | Sydney   | Hotel Creek | Double   | 1 - One       | 13/04/2021 | 14/04/2021 | 1 - One      | 1 - One      | sand      | kumar    | 18 kodambakkam |
 
   #Scenario-2
   Scenario Outline: Verifying AdactinHotelApp booking functionality without passing any field
     Given User is on the AdactinHotelApp login page
     When User should enter valid "<userName>" , "<passWord>" and click the login button
-    Then User should verify login and search hotels with valid details "<location>", "<hotels>", "<roomType>", "<numberOfRooms>","<checkIn>", "<checkOut>", "<adultPerRoom>" and "<childPerRoom>"
+    Then User should verify login "<userName>" and search hotels with valid details "<location>", "<hotels>", "<roomType>", "<numberOfRooms>","<checkIn>", "<checkOut>", "<adultPerRoom>" and "<childPerRoom>"
     Then User should select hotel and click continue button
     Then User should click book now without passing any details
-    Then User should verify "Please Enter your First Name", "Please Enter you Last Name", "Please Enter your Address", "Please Enter your 16 Digit Credit Card Number","Please Select your Credit Card Type","Please Select your Credit Card Expiry Month","Please Enter your Credit Card CVV Number" is displayed
+    Then User should verify "Please Enter your First Name", "Please Enter you Last Name" and "Please Enter your Address" is displayed
 
     Examples: 
-      | userName | passWord | location | hotels      | roomType | numberOfRooms | checkIn    | checkOut   | adultPerRoom | childPerRoom | firstName | lastName | address        |
-      | prakash0 | J5M3AD   | Sydney   | Hotel Creek | Double   |             2 | 13/04/2021 | 14/04/2021 |            2 |            2 | sand      | kumar    | 18 kodambakkam |
+      | userName | passWord | location | hotels      | roomType | numberOfRooms | checkIn    | checkOut   | adultPerRoom | childPerRoom |
+      | prakash0 | J5M3AD   | Sydney   | Hotel Creek | Double   | 1 - One       | 13/04/2021 | 14/04/2021 | 1 - One      | 1 - One      |
