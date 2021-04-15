@@ -13,19 +13,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.stepdefinition.BookingPageSteps;
 
-public class CancelBookingPage extends BaseClass{
-	
+public class CancelBookingPage extends BaseClass {
+
 	public CancelBookingPage() {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(id="order_id_text")
+
+	@FindBy(id = "order_id_text")
 	private WebElement txtboxSearchOrder;
-	
-	@FindBy(xpath="//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr[1]//td[3]//input")
+
+	@FindBy(xpath = "//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr[1]//td[3]//input")
 	private List<WebElement> tdSearchOrder;
-	
-	@FindBy(id="search_result_error")
+
+	@FindBy(id = "search_result_error")
 	private WebElement labelErrorMsg;
 
 	public WebElement getLabelErrorMsg() {
@@ -39,21 +39,21 @@ public class CancelBookingPage extends BaseClass{
 	public List<WebElement> getTdSearchOrder() {
 		return tdSearchOrder;
 	}
-	
-	public void cancelBooking(){
-		enterTextSubmit(txtboxSearchOrder, BookingPageSteps.currentOrderId);
+
+	public void cancelBooking(String orderId) {
+		enterTextSubmit(txtboxSearchOrder, orderId);
 		List<WebElement> listOrderId = getTdSearchOrder();
-		if(listOrderId.size() == 1 && getAttributeText(listOrderId.get(0)).contains(BookingPageSteps.currentOrderId) ) {
+		if (listOrderId.size() == 1 && getAttributeText(listOrderId.get(0)).contains(orderId)) {
 			listOrderId.get(0).click();
 			switchToAlert().accept();
-		}else {
-			verifyBoolAssert("Booking Id not found", false);
+		} else {
+			verifyBoolAssert("Booking Id not found in cancellation", false);
 		}
 	}
-	
+
 	public void verifyCancellationAssert(String expecctedMsg) {
-		WebElement webDriverWait = webDriverWait(getLabelErrorMsg(),10);
-		String actualTxt = getElementText(webDriverWait(getLabelErrorMsg(),10));
+		WebElement webDriverWait = webDriverWait(getLabelErrorMsg(), 10);
+		String actualTxt = getElementText(webDriverWait(getLabelErrorMsg(), 10));
 		verifyAssert(expecctedMsg, actualTxt);
 	}
 

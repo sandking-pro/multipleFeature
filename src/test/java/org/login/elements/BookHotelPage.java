@@ -132,9 +132,9 @@ public class BookHotelPage extends BaseClass {
 	}
 
 	public void verifyErrorAssert(String fnameErr, String lnameErr, String addressErr) {
-		verifyBoolAssert("Verify FirstName", webDriverWait(getSpanFname(), 10).getText().contains(fnameErr));
-		verifyBoolAssert("Verify LastName", webDriverWait(getSpanLname(), 10).getText().contains(lnameErr));
-		verifyBoolAssert("Verify Address", webDriverWait(getSpanAddress(), 10).getText().contains(addressErr));
+		verifyBoolAssert("Verify FirstName", getElementText(webDriverWait(getSpanFname(), 10)).contains(fnameErr));
+		verifyBoolAssert("Verify LastName", getElementText(webDriverWait(getSpanLname(), 10)).contains(lnameErr));
+		verifyBoolAssert("Verify Address", getElementText(webDriverWait(getSpanAddress(), 10)).contains(addressErr));
 	}
 
 	public void bookHotel(String fname, String lname, String address, String creditCardNumber, String creditCardType,
