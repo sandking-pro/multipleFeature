@@ -7,6 +7,7 @@ import java.security.Key;
 import java.util.List;
 
 import org.adactin.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,7 +23,7 @@ public class CancelBookingPage extends BaseClass {
 	@FindBy(id = "order_id_text")
 	private WebElement txtboxSearchOrder;
 
-	@FindBy(xpath = "//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr[1]//td[3]//input")
+	@FindBy(xpath = "//td//strong[contains(text(),'Order Id')]//parent::td//parent::tr//following-sibling::tr")
 	private List<WebElement> tdSearchOrder;
 
 	@FindBy(id = "search_result_error")
@@ -41,13 +42,15 @@ public class CancelBookingPage extends BaseClass {
 	}
 
 	public void cancelBooking(String orderId) {
-		enterTextSubmit(txtboxSearchOrder, orderId);
-		List<WebElement> listOrderId = getTdSearchOrder();
-		if (listOrderId.size() == 1 && getAttributeText(listOrderId.get(0)).contains(orderId)) {
-			listOrderId.get(0).click();
-			switchToAlert().accept();
-		} else {
-			verifyBoolAssert("Booking Id not found in cancellation", false);
+		List<WebElement> rowBooking = getTdSearchOrder();
+		
+		for (int i = rowBooking.size()-1; i > 0 ; i--) {
+			List<WebElement> getRowData = rowBooking.get(i).findElements(By.xpath("//td[3]//input[@value='Cancel "+orderId+"']"));
+			for (WebElement cellData : getRowData) {
+				cellData.click();
+				switchToAlert().accept();
+			}
+			
 		}
 	}
 

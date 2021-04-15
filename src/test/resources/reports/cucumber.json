@@ -7,12 +7,23 @@
         "name": "Verifying AdactinHotelApp booking functionality with valid details",
         "description": "",
         "id": "verify-adactinhotelapp-book-hotel-functionality;verifying-adactinhotelapp-booking-functionality-with-valid-details;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 834106108,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 11070789533,
+              "duration": 9128518587,
               "status": "passed"
             },
             "line": 5,
@@ -24,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 3569244240,
+              "duration": 3968997199,
               "status": "passed"
             },
             "line": 6,
@@ -46,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 3841548134,
+              "duration": 3443952174,
               "status": "passed"
             },
             "line": 7,
@@ -96,7 +107,7 @@
           },
           {
             "result": {
-              "duration": 1296135512,
+              "duration": 1515344435,
               "status": "passed"
             },
             "line": 8,
@@ -108,7 +119,7 @@
           },
           {
             "result": {
-              "duration": 3195586080,
+              "duration": 2655573902,
               "status": "passed"
             },
             "line": 9,
@@ -172,7 +183,7 @@
           },
           {
             "result": {
-              "duration": 6392820814,
+              "duration": 5816441810,
               "status": "passed"
             },
             "line": 14,
@@ -189,12 +200,23 @@
         "name": "Verifying AdactinHotelApp booking functionality without passing any field",
         "description": "",
         "id": "verify-adactinhotelapp-book-hotel-functionality;verifying-adactinhotelapp-booking-functionality-without-passing-any-field;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 817984282,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8499915105,
+              "duration": 4900064069,
               "status": "passed"
             },
             "line": 22,
@@ -206,7 +228,7 @@
           },
           {
             "result": {
-              "duration": 4451230565,
+              "duration": 3100345273,
               "status": "passed"
             },
             "line": 23,
@@ -228,7 +250,7 @@
           },
           {
             "result": {
-              "duration": 3404228537,
+              "duration": 4325147514,
               "status": "passed"
             },
             "line": 24,
@@ -278,7 +300,7 @@
           },
           {
             "result": {
-              "duration": 1336551646,
+              "duration": 1480535469,
               "status": "passed"
             },
             "line": 25,
@@ -290,7 +312,7 @@
           },
           {
             "result": {
-              "duration": 212026455,
+              "duration": 196476579,
               "status": "passed"
             },
             "line": 26,
@@ -302,7 +324,7 @@
           },
           {
             "result": {
-              "duration": 604164005,
+              "duration": 605872676,
               "status": "passed"
             },
             "line": 27,
@@ -344,12 +366,23 @@
         "name": "Verifying AdactinHotelApp navigated to Booked Itinerary page and verify cancelled order id",
         "description": "",
         "id": "verify-adactinhotelapp-cancel-booking-functionality;verifying-adactinhotelapp-navigated-to-booked-itinerary-page-and-verify-cancelled-order-id;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 802702685,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8245096485,
+              "duration": 4831547462,
               "status": "passed"
             },
             "line": 6,
@@ -361,7 +394,7 @@
           },
           {
             "result": {
-              "duration": 3805671698,
+              "duration": 3749240947,
               "status": "passed"
             },
             "line": 7,
@@ -383,7 +416,7 @@
           },
           {
             "result": {
-              "duration": 4325005937,
+              "duration": 4885302613,
               "status": "passed"
             },
             "line": 8,
@@ -433,7 +466,7 @@
           },
           {
             "result": {
-              "duration": 1522526391,
+              "duration": 1346070135,
               "status": "passed"
             },
             "line": 9,
@@ -445,7 +478,7 @@
           },
           {
             "result": {
-              "duration": 2662741495,
+              "duration": 2524892676,
               "status": "passed"
             },
             "line": 10,
@@ -509,7 +542,7 @@
           },
           {
             "result": {
-              "duration": 12071831868,
+              "duration": 14027055572,
               "status": "passed"
             },
             "line": 15,
@@ -521,7 +554,7 @@
           },
           {
             "result": {
-              "duration": 3284920150,
+              "duration": 61964500590,
               "status": "passed"
             },
             "line": 16,
@@ -533,7 +566,7 @@
           },
           {
             "result": {
-              "duration": 6983853039,
+              "duration": 235154291,
               "status": "passed"
             },
             "line": 17,
@@ -556,12 +589,23 @@
         "name": "Verifying AdactinHotelApp navigated to Booked Itinerary page and verify cancelled order id",
         "description": "",
         "id": "verify-adactinhotelapp-cancel-booking-functionality;verifying-adactinhotelapp-navigated-to-booked-itinerary-page-and-verify-cancelled-order-id;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1214399408,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8492309444,
+              "duration": 4786618817,
               "status": "passed"
             },
             "line": 25,
@@ -573,7 +617,7 @@
           },
           {
             "result": {
-              "duration": 3942125779,
+              "duration": 2999774298,
               "status": "passed"
             },
             "line": 26,
@@ -595,7 +639,7 @@
           },
           {
             "result": {
-              "duration": 4083756654,
+              "duration": 4052975964,
               "status": "passed"
             },
             "line": 27,
@@ -645,7 +689,7 @@
           },
           {
             "result": {
-              "duration": 1208979984,
+              "duration": 1411386896,
               "status": "passed"
             },
             "line": 28,
@@ -657,7 +701,7 @@
           },
           {
             "result": {
-              "duration": 2772763250,
+              "duration": 3457392244,
               "status": "passed"
             },
             "line": 29,
@@ -721,7 +765,7 @@
           },
           {
             "result": {
-              "duration": 11726225450,
+              "duration": 13729982882,
               "status": "passed"
             },
             "line": 34,
@@ -733,15 +777,15 @@
           },
           {
             "result": {
-              "duration": 4171724198,
+              "duration": 53260912074,
               "status": "passed"
             },
             "line": 35,
-            "name": "User should click cancel order \"79YWXX2GXX\" and click ok",
+            "name": "User should click cancel order \"8JTT90DDJX\" and click ok",
             "match": {
               "arguments": [
                 {
-                  "val": "\"79YWXX2GXX\"",
+                  "val": "\"8JTT90DDJX\"",
                   "offset": 31
                 }
               ],
@@ -751,8 +795,9 @@
           },
           {
             "result": {
-              "duration": 6205786294,
-              "status": "passed"
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[The booking has been cancelled.]\u003e but was:\u003c[]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat org.adactin.BaseClass.verifyAssert(BaseClass.java:88)\r\n\tat org.login.elements.CancelBookingPage.verifyCancellationAssert(CancelBookingPage.java:60)\r\n\tat com.stepdefinition.CancelPageSteps.userShouldVerifyOrderIsDisplayed(CancelPageSteps.java:28)\r\n\tat ✽.User should verify order \"The booking has been cancelled.\" is displayed(src/test/resources/Features/CancelBooking.feature:36)\r\n",
+              "duration": 270314635,
+              "status": "failed"
             },
             "line": 36,
             "name": "User should verify order \"The booking has been cancelled.\" is displayed",
@@ -785,12 +830,23 @@
         "name": "Verifying AdactinHotelApp navigated to select hotel page by giving valid details",
         "description": "",
         "id": "verify-adactinhotelapp-search-hotels-functionality;verifying-adactinhotelapp-navigated-to-select-hotel-page-by-giving-valid-details;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1082359864,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8581336764,
+              "duration": 5206782462,
               "status": "passed"
             },
             "line": 5,
@@ -802,7 +858,7 @@
           },
           {
             "result": {
-              "duration": 2879990910,
+              "duration": 3253710625,
               "status": "passed"
             },
             "line": 6,
@@ -824,7 +880,7 @@
           },
           {
             "result": {
-              "duration": 2963533147,
+              "duration": 3762551751,
               "status": "passed"
             },
             "line": 7,
@@ -874,7 +930,7 @@
           },
           {
             "result": {
-              "duration": 65864602,
+              "duration": 86269132,
               "status": "passed"
             },
             "line": 8,
@@ -897,12 +953,23 @@
         "name": "Verifying AdactinHotelApp navigated to select hotel page by giving mandatory fields",
         "description": "",
         "id": "verify-adactinhotelapp-search-hotels-functionality;verifying-adactinhotelapp-navigated-to-select-hotel-page-by-giving-mandatory-fields;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1645704035,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8974266325,
+              "duration": 4843876974,
               "status": "passed"
             },
             "line": 16,
@@ -914,7 +981,7 @@
           },
           {
             "result": {
-              "duration": 3890736913,
+              "duration": 3609873765,
               "status": "passed"
             },
             "line": 17,
@@ -936,7 +1003,7 @@
           },
           {
             "result": {
-              "duration": 3066881802,
+              "duration": 3920446029,
               "status": "passed"
             },
             "line": 18,
@@ -974,7 +1041,7 @@
           },
           {
             "result": {
-              "duration": 110254638,
+              "duration": 103121414,
               "status": "passed"
             },
             "line": 19,
@@ -997,12 +1064,23 @@
         "name": "Verifying AdactinHotelApp search functionality with invalid checkin and checkout date",
         "description": "",
         "id": "verify-adactinhotelapp-search-hotels-functionality;verifying-adactinhotelapp-search-functionality-with-invalid-checkin-and-checkout-date;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 775921033,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 11225152080,
+              "duration": 5180628674,
               "status": "passed"
             },
             "line": 27,
@@ -1014,7 +1092,7 @@
           },
           {
             "result": {
-              "duration": 4786639336,
+              "duration": 3794494296,
               "status": "passed"
             },
             "line": 28,
@@ -1036,7 +1114,7 @@
           },
           {
             "result": {
-              "duration": 1912884996,
+              "duration": 1640302051,
               "status": "passed"
             },
             "line": 29,
@@ -1074,7 +1152,7 @@
           },
           {
             "result": {
-              "duration": 176567568,
+              "duration": 162714565,
               "status": "passed"
             },
             "line": 30,
@@ -1101,12 +1179,23 @@
         "name": "Verifying AdactinHotelApp search functionality without selecting location",
         "description": "",
         "id": "verify-adactinhotelapp-search-hotels-functionality;verifying-adactinhotelapp-search-functionality-without-selecting-location;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 996507254,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tc1(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 10338191580,
+              "duration": 4847120421,
               "status": "passed"
             },
             "line": 38,
@@ -1118,7 +1207,7 @@
           },
           {
             "result": {
-              "duration": 9322968460,
+              "duration": 3580272372,
               "status": "passed"
             },
             "line": 39,
@@ -1140,7 +1229,7 @@
           },
           {
             "result": {
-              "duration": 224918170,
+              "duration": 214002890,
               "status": "passed"
             },
             "line": 40,
@@ -1158,7 +1247,7 @@
           },
           {
             "result": {
-              "duration": 102496116,
+              "duration": 101220384,
               "status": "passed"
             },
             "line": 41,

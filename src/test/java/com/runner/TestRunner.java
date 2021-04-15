@@ -7,6 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
+//Features//SearchHotel.feature
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src//test//resources",glue= {"com.stepdefinition"},dryRun=false,monochrome=true,snippets=SnippetType.CAMELCASE,plugin={"pretty","json:src\\test\\resources\\reports\\cucumber.json"})
 public class TestRunner {

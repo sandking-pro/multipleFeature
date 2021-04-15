@@ -21,7 +21,7 @@ Feature: Verify AdactinHotelApp Cancel booking functionality
       | prakash0 | J5M3AD   | Sydney   | Hotel Creek | Double   | 1 - One       | 13/04/2021 | 14/04/2021 | 1 - One      | 1 - One      | sand      | kumar    | 18 kodambakkam |
 
   #Scenario-2
-  Scenario Outline: Verifying AdactinHotelApp navigated to Booked Itinerary page and verify cancelled order id
+  Scenario Outline: Verifying AdactinHotelApp navigated to Booked Itinerary page and verify cancelled given order id
     Given User is on the AdactinHotelApp login page
     When User should enter valid "<userName>" , "<passWord>" and click the login button
     Then User should verify login "<userName>" and search hotels with valid details "<location>", "<hotels>", "<roomType>", "<numberOfRooms>","<checkIn>", "<checkOut>", "<adultPerRoom>" and "<childPerRoom>"
@@ -37,4 +37,4 @@ Feature: Verify AdactinHotelApp Cancel booking functionality
 
     Examples: 
       | userName | passWord | orderId    | location | hotels      | roomType | numberOfRooms | checkIn    | checkOut   | adultPerRoom | childPerRoom | firstName | lastName | address        |
-      | prakash0 | J5M3AD   | 79YWXX2GXX | Sydney   | Hotel Creek | Double   | 1 - One       | 13/04/2021 | 14/04/2021 | 1 - One      | 1 - One      | sand      | kumar    | 18 kodambakkam |
+      | prakash0 | J5M3AD   | E666DFG6S1 | Sydney   | Hotel Creek | Double   | 1 - One       | 13/04/2021 | 14/04/2021 | 1 - One      | 1 - One      | sand      | kumar    | 18 kodambakkam |
